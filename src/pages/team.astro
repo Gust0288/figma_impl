@@ -3,17 +3,39 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import ImageAbout1 from "../assets/team1.jpg";
 import PictureCards from "../components/PictureCards.astro";
+import ImagePerson4 from "../assets/person4.jpg";
+import ImagePerson5 from "../assets/person5.jpg";
+import ImagePerson6 from "../assets/person6.jpg";
 ---
 
 <Layout title="">
   <main>
-    <Card
-      h1Text="Team"
-      h2Text="The Consultors"
-      image={ImageAbout1}
-    />
-    <PictureCards></PictureCards>
+    <Card h1Text="Team" h2Text="The Consultors" image={ImageAbout1} />
+    <article id="article_2_1">
+      <PictureCards
+        source={ImagePerson4}
+        name="Maya Elizabeth"
+        desc="Leverage agile frameworks to provide a robust synopsis for high level overviews."
+      />
+      <PictureCards
+        source={ImagePerson4}
+        name="Maya Elizabeth"
+        desc="Leverage agile frameworks to provide a robust synopsis for high level overviews."
+      />
+      <PictureCards
+        source={ImagePerson4}
+        name="Maya Elizabeth"
+        desc="Leverage agile frameworks to provide a robust synopsis for high level overviews."
+      />
+    </article>
   </main>
-</Layout>
 
-<style></style>
+  <style>
+
+    
+    #article_2_1{
+      display: flex;
+      gap: 2em;
+    }
+  </style>
+</Layout>

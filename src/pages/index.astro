@@ -37,14 +37,14 @@ import ImageEnd2 from "../assets/end2.jpg";
             DevOps.
           </p>
           <div>
-            <img src="src/icons/checkMark.svg" alt="" />
+            <img src="/icons/checkMark.svg" alt="" />
             <p>
               Bring to the table win-win survival strategies to ensure proactive
               domination. At the end of the day
             </p>
           </div>
           <div>
-            <img src="src/icons/checkMark.svg" alt="" />
+            <img src="/icons/checkMark.svg" alt="" />
             <p>
               Capitalize on low hanging fruit to identify a ballpark value added
               activity to beta test override the digital.
@@ -94,22 +94,22 @@ import ImageEnd2 from "../assets/end2.jpg";
         </div>
         <div>
           <IdeaCards
-            source="src/icons/stack.svg"
+            source="/icons/stack.svg"
             h1Text="Creative Ideas"
             pText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget accumsan augue Donec aliquam."
           />
           <IdeaCards
-            source="src/icons/graph.svg"
+            source="/icons/graph.svg"
             h1Text="Best Features"
             pText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
           <IdeaCards
-            source="src/icons/globe.svg"
+            source="/icons/globe.svg"
             h1Text="Experience"
             pText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget accumsan augue Donec aliquam."
           />
           <IdeaCards
-            source="src/icons/wheel.svg"
+            source="/icons/wheel.svg"
             h1Text="Easy Solutions"
             pText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
@@ -176,7 +176,7 @@ import ImageEnd2 from "../assets/end2.jpg";
           <Button
             color="yellow"
             buttonText="+800 1234 654"
-            source="src/icons/phone.svg"
+            source="/icons/phone.svg"
           />
         </div>
         <div>
@@ -192,7 +192,7 @@ import ImageEnd2 from "../assets/end2.jpg";
   main {
     container-type: inline-size;
     display: grid;
-    grid-template-columns: 1fr 3.55fr 1fr;
+    grid-template-columns: 1fr minmax(0, 75rem) 1fr;
 
     @container (width < 500px) {
       grid-template-columns: 1fr;
