@@ -1,7 +1,6 @@
 ---
 const { name, desc, source, label } = Astro.props;
 import { Image } from "astro:assets";
-
 ---
 
 <div class="main">
@@ -75,6 +74,18 @@ import { Image } from "astro:assets";
     color: white;
     font-family: Lato;
   }
+  @media (max-width: 850px) {
+    #number1::after {
+      content: none;
+    }
+    #number2::after {
+      content: none;
+    }
+    #number3::after {
+      content: none;
+    }
+  }
+
   .soMeLogo {
     display: flex;
     justify-content: space-evenly;

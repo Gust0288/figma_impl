@@ -3,6 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import ImageAbout1 from "../assets/team1.jpg";
 import PictureCards from "../components/PictureCards.astro";
+import Button from "../components/Button.astro";
+import ImagePerson1 from "../assets/person1.jpg";
+import ImagePerson2 from "../assets/person2.jpg";
+import ImagePerson3 from "../assets/person3.jpg";
 import ImagePerson4 from "../assets/person4.jpg";
 import ImagePerson5 from "../assets/person5.jpg";
 import ImagePerson6 from "../assets/person6.jpg";
@@ -10,32 +14,146 @@ import ImagePerson6 from "../assets/person6.jpg";
 
 <Layout title="">
   <main>
-    <Card h1Text="Team" h2Text="The Consultors" image={ImageAbout1} />
-    <article id="article_2_1">
-      <PictureCards
-        source={ImagePerson4}
-        name="Maya Elizabeth"
-        desc="Leverage agile frameworks to provide a robust synopsis for high level overviews."
-      />
-      <PictureCards
-        source={ImagePerson4}
-        name="Maya Elizabeth"
-        desc="Leverage agile frameworks to provide a robust synopsis for high level overviews."
-      />
-      <PictureCards
-        source={ImagePerson4}
-        name="Maya Elizabeth"
-        desc="Leverage agile frameworks to provide a robust synopsis for high level overviews."
-      />
-    </article>
+    <section class="introContent">
+      <Card h1Text="Team" h2Text="The Consultors" image={ImageAbout1} />
+    </section>
+    <section class="mainContent">
+      <article id="article_2_1">
+        <div>
+          <div>
+            <h2>Meet Our Great Team</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt <br /> ut labore et dolore magna aliqua.
+              enim ad minim veniam, quis nostrud exercitation.
+            </p>
+          </div>
+          <Button buttonText="Get in touch" color="black" />
+        </div>
+        <div>
+          <PictureCards
+            source={ImagePerson1}
+            name="Sarah Jasmine"
+            desc="Leverage agile frameworks to provide a robust synopsis for high level overviews."
+            label="number1"
+          />
+          <PictureCards
+            source={ImagePerson2}
+            name="John Carter"
+            desc="Leverage agile frameworks to provide a robust synopsis for high level overviews."
+            label="number2"
+          />
+          <PictureCards
+            source={ImagePerson3}
+            name="Daisy Stella"
+            desc="Leverage agile frameworks to provide a robust synopsis for high level overviews."
+            label="number3"
+          />
+        </div>
+        <div>
+          <PictureCards
+            source={ImagePerson4}
+            name="Maya Elizabeth"
+            desc="Leverage agile frameworks to provide a robust synopsis for high level overviews."
+            label="number3"
+          />
+          <PictureCards
+            source={ImagePerson5}
+            name="Ryan Jackson"
+            desc="Leverage agile frameworks to provide a robust synopsis for high level overviews."
+            label="number3"
+          />
+          <PictureCards
+            source={ImagePerson6}
+            name="Lilly Victoria"
+            desc="Leverage agile frameworks to provide a robust synopsis for high level overviews."
+            label="number3"
+          />
+        </div>
+      </article>
+    </section>
   </main>
+</Layout>
 
-  <style>
+<style>
+  main {
+    container-type: inline-size;
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 60rem) 1fr;
 
-    
-    #article_2_1{
+    * > {
+      grid-column: 2;
+    }
+
+    @container (width < 500px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .introContent {
+    grid-column: 1/-1;
+  }
+  .mainContent {
+    container-type: inline-size;
+    display: grid;
+    grid-template-columns: inherit;
+    grid-column: 1/-1;
+    padding: 4svw 0svw;
+
+    :has(article) {
+      background: #f5f5f5;
+    }
+
+    > * {
+      grid-column: 2;
+    }
+    @container (width < 1000px) {
+      grid-template-columns: 1f;
+      padding: 2svw 3svw 2svw 3svw;
+    }
+  }
+
+  #article_2_1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    & > div {
       display: flex;
       gap: 2em;
     }
-  </style>
-</Layout>
+    & > :first-child {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 3em;
+    }
+    & > :last-child {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    & > :first-child > div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75em;
+    }
+    @container (width < 500px) {
+      & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+      }
+      & > :first-child {
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+      }
+      & > :last-child {
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+      }
+      flex-direction: column;
+      padding: 2svw 3svw 2svw 3svw;
+    }
+  }
+</style>

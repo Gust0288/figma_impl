@@ -192,9 +192,13 @@ import ImageEnd2 from "../assets/end2.jpg";
   main {
     container-type: inline-size;
     display: grid;
-    grid-template-columns: 1fr minmax(0, 75rem) 1fr;
+    grid-template-columns: 1fr minmax(0, 60rem) 1fr;
 
-    @container (width < 500px) {
+    * > {
+      grid-column: 2;
+    }
+
+    @container (width < 850px) {
       grid-template-columns: 1fr;
     }
   }
@@ -202,15 +206,28 @@ import ImageEnd2 from "../assets/end2.jpg";
     grid-column: 1/-1;
   }
   .mainContent {
-    grid-column: 2;
+    display: grid;
+    grid-template-columns: inherit;
+    grid-column: 1/-1;
     padding: 4svw 0svw;
-    @container (width < 500px) {
-      grid-column: 1;
+    &:nth-of-type(3) {
+      background: #f5f5f5;
+    }
+    &:nth-of-type(5) {
+      background: #f5f5f5;
+    }
+
+    /* :has(article) {
+      background: #f5f5f5;
+    } */
+
+    > * {
+      grid-column: 2;
+    }
+    @container (width < 1000px) {
+      grid-template-columns: 1f;
       padding: 2svw 3svw 2svw 3svw;
     }
-  }
-  .mainContent * {
-    grid-column: 2;
   }
   #article_1_1 {
     display: flex;
@@ -222,15 +239,20 @@ import ImageEnd2 from "../assets/end2.jpg";
       flex-direction: column;
       gap: 1em;
     }
+
+    & div:has(> img, p) {
+      display: flex;
+      gap: 1em;
+    }
+    & img {
+      width: 1.23044rem;
+      height: 1.23044rem;
+    }
+    @container (width < 850px) {
+      flex-direction: column;
+    }
   }
-  #article_1_1 div:has(> img, p) {
-    display: flex;
-    gap: 1em;
-  }
-  #article_1_1 img {
-    width: 1.23044rem;
-    height: 1.23044rem;
-  }
+
   #article_1_2 {
     display: flex;
     flex-direction: column;
@@ -252,12 +274,31 @@ import ImageEnd2 from "../assets/end2.jpg";
       flex-direction: column;
       gap: 0.75em;
     }
+    @container (width < 850px) {
+      & > :first-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3em;
+      }
+      & > :last-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2svw;
+      }
+    }
   }
   #article_1_3 {
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 1em;
+    @container (width < 850px) {
+      text-align: left;
+    }
   }
   #article_1_4 {
     display: flex;
@@ -266,6 +307,13 @@ import ImageEnd2 from "../assets/end2.jpg";
     & > div {
       display: flex;
       gap: 2em;
+    }
+    @container (width < 850px) {
+      & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+      }
     }
   }
   #article_1_5 {
@@ -294,6 +342,11 @@ import ImageEnd2 from "../assets/end2.jpg";
     & h2 span {
       color: #727272;
     }
+    @container (width < 850px) {
+      flex-direction: column;
+      padding: 1em 1em 1em 1em;
+      justify-content: center;
+    }
   }
   dl {
     display: flex;
@@ -301,5 +354,8 @@ import ImageEnd2 from "../assets/end2.jpg";
     align-items: center;
     gap: 8.4375rem;
     padding: 3rem 3rem 0rem 3rem;
+    @container (width < 850px) {
+      flex-direction: column;
+    }
   }
 </style>
