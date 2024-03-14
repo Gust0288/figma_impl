@@ -1,0 +1,83 @@
+---
+const { image, placement, style } = Astro.props;
+import { Image } from "astro:assets";
+---
+
+<figure id={placement}>
+  <Image src={image} alt="Intro image" id={style} />
+</figure>
+<style>
+  #figure1 {
+    margin-inline: auto;
+    max-width: 400px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      right: -1rem;
+      top: -1rem;
+      background: #4eaf4e;
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
+      z-index: -1;
+    }
+  }
+  #picture {
+    border-radius: 20px;
+    filter: brightness(0.7);
+  }
+  #picture2 {
+    border-radius: 20px;
+  }
+
+  #figure2 {
+    margin-inline: auto;
+    width: 45svw;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: -1rem;
+      bottom: -1rem;
+      background: #4eaf4e;
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
+      z-index: -1;
+    }
+    &::after {
+      content: url(src/icons/play-button.svg);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+  }
+  #figure3 {
+    margin-inline: auto;
+    position: relative;
+    max-width: 300px;
+    &::before {
+      content: "";
+      position: absolute;
+      right: -1rem;
+      bottom: -1rem;
+      background: #4eaf4e;
+      border-radius: 20px;
+      z-index: 0;
+    }
+    & > img {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+  }
+  #figure4 {
+    max-width: 300px;
+    & > img {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+</style>

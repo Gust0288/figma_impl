@@ -1,0 +1,88 @@
+---
+const { name, desc, source, label } = Astro.props;
+import { Image } from "astro:assets";
+
+---
+
+<div class="main">
+  <div id={label}>
+    <Image src={source} alt="Picture of a Person" id="picture" />
+  </div>
+  <h3>{name}</h3>
+  <p>{desc}</p>
+  <div class="soMeLogo">
+    <img src="src/icons/instagram.svg" alt="SoMe Icons" />
+    <img src="src/icons/facebook.svg" alt="SoMe Icons" />
+    <img src="src/icons/twitter.svg" alt="SoMe Icons" />
+  </div>
+</div>
+
+<style>
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    text-align: center;
+    position: relative;
+    padding-top: 1.8svw;
+  }
+  #picture {
+    border-radius: 20px;
+  }
+
+  #number1::after {
+    content: "CEO at Company";
+    position: absolute;
+    top: 62.5%;
+    left: 47%;
+    transform: translate(-0%, -5%);
+    z-index: 1;
+    display: inline-flex;
+    padding: 0.2svw 1svw;
+    border-radius: 20px;
+    background: #ffcc4a;
+    font-size: 1svw;
+    color: #181818;
+    font-family: Lato;
+  }
+  #number2::after {
+    content: "Manager";
+    position: absolute;
+    top: 62.5%;
+    left: 47%;
+    transform: translate(65%, -5%);
+    z-index: 1;
+    display: inline-flex;
+    padding: 0.2svw 1svw;
+    border-radius: 20px;
+    background: #181818;
+    font-size: 1svw;
+    color: white;
+    font-family: Lato;
+  }
+  #number3::after {
+    content: "CEO at Company";
+    position: absolute;
+    top: 62.5%;
+    left: 47%;
+    transform: translate(-0%, -5%);
+    z-index: 1;
+    display: inline-flex;
+    padding: 0.2svw 1svw;
+    border-radius: 20px;
+    background: #181818;
+    font-size: 1svw;
+    color: white;
+    font-family: Lato;
+  }
+  .soMeLogo {
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 3svw;
+    padding-right: 3svw;
+  }
+  .soMeLogo img {
+    width: 1.25rem;
+    height: 2rem;
+  }
+</style>

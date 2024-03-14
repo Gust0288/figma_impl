@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import ImageAbout1 from "../assets/service1.jpg";
+---
+
+<Layout title="">
+  <main>
+    <section class="introContent">
+      <Card
+        h1Text="Services_Single"
+        h2Text="Services Details"
+        image={ImageAbout1}
+        ;
+      />
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    container-type: inline-size;
+    display: grid;
+    grid-template-columns: 1fr 3.55fr 1fr;
+
+    @container (width < 500px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .introContent {
+    grid-column: 1/-1;
+  }
+</style>

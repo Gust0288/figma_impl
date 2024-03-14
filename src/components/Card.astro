@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+const { h1Text, h2Text, image, size } = Astro.props;
+---
+
+<div class="container">
+  <Image src={image} alt="Intro image" />
+  <div class="overlay" id={size}>
+    <div class="div-wrapper">
+     <div class="label"><h1>{h1Text}</h1></div>
+    </div> 
+    <h2>{h2Text}</h2>
+  </div>
+</div>
+<style>
+  .container {
+    position: relative;
+    container-type: inline-size;
+  }
+  .overlay {
+    position: absolute;
+    top: 30%;
+    left: 18%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.8125rem;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5.5px);
+    padding: 2svw 3svw 2svw 3svw;
+    gap: 1rem;
+
+    @container (width < 750px) {
+      position: relative;
+      gap: 0.5rem;
+      left: 0%;
+    }
+  }
+  .label {
+    max-width: 8rem;
+    height: fit-content;
+    background-color: #ffcc4a;
+    display: inline-flex;
+    padding: 0px 1svw;
+    border-radius: 20px;
+    background: #ffcc4a;
+  }
+  #indexSize {
+    width: 41.25svw;
+    height: 14svw;
+  }
+  @container (width < 500px) {
+    .div-wrapper {
+      padding: 0;
+    }
+  }
+</style>

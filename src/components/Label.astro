@@ -1,0 +1,23 @@
+---
+const { h1Text, color } = Astro.props;
+---
+
+<div class="div-wrapper">
+  <div class="label" id={color}><h1 id={color}>{h1Text}</h1></div>
+</div>
+<style>
+  .div-wrapper {
+    container-type: inline-size;
+  }
+  .label {
+    background-color: #ffcc4a;
+    display: inline-flex;
+    padding: 0svw 1svw;
+    border-radius: 20px;
+    background: #ffcc4a;
+  }
+  #green {
+    background: #4eaf4e;
+    color: #FFF;
+  }
+</style>

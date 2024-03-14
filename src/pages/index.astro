@@ -1,0 +1,305 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Label from "../components/Label.astro";
+import PictureFigure from "../components/PictureFigure.astro";
+import IdeaCards from "../components/IdeaCards.astro";
+import Button from "../components/Button.astro";
+import PictureCards from "../components/PictureCards.astro";
+import ImageAbout1 from "../assets/about1.jpg";
+import ImageAbout2 from "../assets/about2.jpg";
+import ImageAbout3 from "../assets/about3.jpg";
+import ImagePerson1 from "../assets/person1.jpg";
+import ImagePerson2 from "../assets/person2.jpg";
+import ImagePerson3 from "../assets/person3.jpg";
+import ImageEnd1 from "../assets/end1.jpg";
+import ImageEnd2 from "../assets/end2.jpg";
+---
+
+<Layout title="">
+  <main>
+    <section class="introContent">
+      <Card
+        h1Text="Services"
+        h2Text="Creative Services For Boost Your Business Growth"
+        image={ImageAbout1}
+        size="indexSize"
+      />
+    </section>
+    <section class="mainContent">
+      <article id="article_1_1">
+        <div>
+          <Label h1Text="Our Vision" color="green" />
+          <h2>Turn your ideas into reality.</h2>
+          <p>
+            Capitalize on low hanging fruit to identify a ballpark value added
+            activity beta test. Override the digital divide with additional from
+            DevOps.
+          </p>
+          <div>
+            <img src="src/icons/checkMark.svg" alt="" />
+            <p>
+              Bring to the table win-win survival strategies to ensure proactive
+              domination. At the end of the day
+            </p>
+          </div>
+          <div>
+            <img src="src/icons/checkMark.svg" alt="" />
+            <p>
+              Capitalize on low hanging fruit to identify a ballpark value added
+              activity to beta test override the digital.
+            </p>
+          </div>
+        </div>
+        <PictureFigure
+          image={ImageAbout2}
+          placement="figure1"
+          style="picture2"
+        />
+      </article>
+      <article id="article_1_1_2">
+        <dl>
+          <div>
+            <dt>1128+</dt>
+            <dd>Successfull Work</dd>
+          </div>
+          <div>
+            <dt>908+</dt>
+            <dd>Team member</dd>
+          </div>
+          <div>
+            <dt>258+</dt>
+            <dd>Happy Customers</dd>
+          </div>
+          <div>
+            <dt>564+</dt>
+            <dd>Creative Idea</dd>
+          </div>
+        </dl>
+      </article>
+    </section>
+    <section class="mainContent">
+      <article id="article_1_2">
+        <div>
+          <div>
+            <Label h1Text="Growing With our vision" />
+            <h2>Our core values & princibles</h2>
+            <p>
+              Capitalize on low hanging fruit to identify a ballpark value added
+              activity beta test. <br /> Override the digital divide with additional
+              from DevOps.
+            </p>
+          </div>
+          <Button buttonText="Get in touch" color="black" />
+        </div>
+        <div>
+          <IdeaCards
+            source="src/icons/stack.svg"
+            h1Text="Creative Ideas"
+            pText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget accumsan augue Donec aliquam."
+          />
+          <IdeaCards
+            source="src/icons/graph.svg"
+            h1Text="Best Features"
+            pText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          />
+          <IdeaCards
+            source="src/icons/globe.svg"
+            h1Text="Experience"
+            pText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget accumsan augue Donec aliquam."
+          />
+          <IdeaCards
+            source="src/icons/wheel.svg"
+            h1Text="Easy Solutions"
+            pText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          />
+        </div>
+      </article>
+    </section>
+    <section class="mainContent">
+      <article id="article_1_3">
+        <Label h1Text="Our History" color="green" />
+        <h2>Better Website Means A <br /> User Experience</h2>
+        <p>
+          Ippsum is the result of synergy between our teams and our customers.
+          Our company culture is focused <br /> on excellent productivity, customer
+          satisfaction, respect for team and individual achievements.
+        </p>
+        <PictureFigure
+          image={ImageAbout3}
+          placement="figure2"
+          style="picture"
+        />
+      </article>
+    </section>
+    <section class="mainContent">
+      <article id="article_1_4">
+        <Label h1Text="Our Team" />
+        <h2>We champion the bold to <br /> achieve the extraordinary</h2>
+        <p>
+          Ippsum is the result of synergy between our teams and our customers.
+          Our company culture <br /> is focused on excellent productivity, customer
+          satisfaction, respect for team.
+        </p>
+        <div>
+          <PictureCards
+            source={ImagePerson1}
+            name="Sarah Jasmine"
+            desc="Leverage agile frameworks to provide a robust synopsis for high level overviews."
+            label="number1"
+          />
+          <PictureCards
+            source={ImagePerson2}
+            name="John Carter"
+            desc="Leverage agile frameworks to provide a robust synopsis for high level overviews."
+            label="number2"
+          />
+          <PictureCards
+            source={ImagePerson3}
+            name="Daisy Stella"
+            desc="Leverage agile frameworks to provide a robust synopsis for high level overviews."
+            label="number3"
+          />
+        </div>
+      </article>
+    </section>
+    <section class="mainContent">
+      <article id="article_1_5">
+        <div>
+          <Label h1Text="Book Now" color="green" />
+          <h2>Better Consult, <span>Better</span> <br />Results</h2>
+          <p>
+            Our software development agency has a growth up to 30% <br />per
+            each year. If you are result-oriented, not afraid to take <br /> initiative
+            – drop us a note and join our team!
+          </p>
+          <Button
+            color="yellow"
+            buttonText="+800 1234 654"
+            source="src/icons/phone.svg"
+          />
+        </div>
+        <div>
+          <PictureFigure image={ImageEnd1} placement="figure3" />
+          <PictureFigure image={ImageEnd2} placement="figure4" />
+        </div>
+      </article>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    container-type: inline-size;
+    display: grid;
+    grid-template-columns: 1fr 3.55fr 1fr;
+
+    @container (width < 500px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .introContent {
+    grid-column: 1/-1;
+  }
+  .mainContent {
+    grid-column: 2;
+    padding: 4svw 0svw;
+    @container (width < 500px) {
+      grid-column: 1;
+      padding: 2svw 3svw 2svw 3svw;
+    }
+  }
+  .mainContent * {
+    grid-column: 2;
+  }
+  #article_1_1 {
+    display: flex;
+    gap: 7.62em;
+    justify-content: space-evenly;
+    align-items:;
+
+    & > :nth-child(1) {
+      flex-direction: column;
+      gap: 1em;
+    }
+  }
+  #article_1_1 div:has(> img, p) {
+    display: flex;
+    gap: 1em;
+  }
+  #article_1_1 img {
+    width: 1.23044rem;
+    height: 1.23044rem;
+  }
+  #article_1_2 {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+
+    & > :first-child {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 3em;
+    }
+    & > :last-child {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    & > :first-child > div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75em;
+    }
+  }
+  #article_1_3 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1em;
+  }
+  #article_1_4 {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    & > div {
+      display: flex;
+      gap: 2em;
+    }
+  }
+  #article_1_5 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0em 5em 0em 5em;
+    border-radius: 1.875rem;
+    background: #181818;
+
+    & > :first-child {
+      display: flex;
+      flex-direction: column;
+      padding: 4em 0em;
+      gap: 0.6em;
+    }
+    & > :last-child {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-direction: column;
+      padding-top: 2.5em;
+    }
+    & h2 {
+      color: #fff;
+    }
+    & h2 span {
+      color: #727272;
+    }
+  }
+  dl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8.4375rem;
+    padding: 3rem 3rem 0rem 3rem;
+  }
+</style>
